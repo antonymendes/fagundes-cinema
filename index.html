@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 Cinemagia Real: Uma História a Dois</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fdf8f2;
+      color: #3a2f28;
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #f7c04a;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    button:hover {
+      background-color: #ffd369;
+    }
+    .slide {
+      display: none;
+    }
+    .slide.active {
+      display: block;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide active" id="pagina1">
+    <h1>🎬 Cinemagia Real: Uma História a Dois</h1>
+    <p>Um convite para viver aquele momento de filme... mas dessa vez, com uma princesa real ao lado.</p>
+    <button onclick="mostrarPagina('pagina2')">Próxima Página</button>
+  </div>
+
+  <div class="slide hidden" id="pagina2">
+    
+    <p>O príncipe separou os melhores lugares, o filme perfeito e a melhor companhia que poderia ter escolhido: você.</p>
+    <button onclick="mostrarPagina('pagina3')">Próxima Página</button>
+  </div>
+
+  <div class="slide hidden" id="pagina3">
+    
+    <p>Entre risadas, suspiros e cenas inesquecíveis, talvez a melhor parte seja olhar pro lado e ver você ali.</p>
+    <button onclick="mostrarPagina('pagina4')">Próxima Página</button>
+  </div>
+
+  <div class="slide hidden" id="pagina4">
+    
+    <p>Uma tela, duas pessoas e um enredo que pode se tornar real. Você topa viver essa história?</p>
+    <button onclick="alert('Convite aceito com honra real!')">Confirmar presença</button>
+  </div>
+
+  <script>
+    function mostrarPagina(id) {
+      const todas = document.querySelectorAll('.slide');
+      todas.forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      mostrarPagina('pagina1');
+    });
+  </script>
+</body>
+</html>
